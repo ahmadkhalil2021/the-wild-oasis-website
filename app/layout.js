@@ -6,6 +6,7 @@ const josefin = Josefin_Sans({
 
 import "@/app/__styles/globals.css";
 import Header from "./_components/Header";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
   // title: "The Wild Oasis",
@@ -24,7 +25,10 @@ export default function RootLayout({ children }) {
       >
         <Header />
         <div className="flex-1 px-8 py-12">
-          <main className="max-w-7xl mx-auto">{children}</main>
+          <main className="max-w-7xl mx-auto">
+            {children}
+            <SpeedInsights />
+          </main>
         </div>
       </body>
     </html>
